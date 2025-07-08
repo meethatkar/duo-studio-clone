@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+@font-face {
+    font-family: "M PLUS ROUNDED 1c";
+    src: "";
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "M PLUS ROUNDED 1c";
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* CURSOR */
+#cursor {
+    position: fixed;
+    background-color: rgb(255, 140, 255);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    inset: 0;
+    z-index: 20;
+    transition: all ease;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    display: inline-block;
+}
+
+#main {
+    background-color: #100D0E;
+}
+
+/* NAV  */
+nav {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 3%;
+}
+
+nav>img {
+    height: 25px;
+}
+
+nav>img:hover {
+    filter: opacity(80%);
+    cursor: pointer;
+}
+
+#nav-mid {
+    display: flex;
+    gap: 40px;
+}
+
+#nav-mid>h4 {
+    font-size: 14px;
+    font-weight: 500;
+    /* transition: all 0.5s ease; */
+}
+
+#nav-mid>h4:nth-child(1):hover {
+    border-bottom: 1.5px solid #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#nav-mid>h4:nth-child(2):hover {
+    border-bottom: 1.5px solid #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#nav-mid>h4:nth-child(3):hover {
+    border-bottom: 1.5px solid #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#nav-mid>h4:nth-child(4):hover {
+    border-bottom: 1.5px solid #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* PAGE 1 */
+#page-1 {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+#page-1>h1 {
+    font-size: 8vw;
+    font-weight: 600;
+    margin-top: 10vw;
+    padding-left: 7vw;
+    line-height: 6vw;
+}
+
+#page-1>h2 {
+    font-size: 8vw;
+    font-weight: 600;
+    /* margin-top: 10vw; */
+    padding-left: 27vw;
+}
+
+#page-1>video {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 8vw;
+    width: 60%;
+    margin-bottom: 8vw;
+}
+
+/* PAGE 2 */
+#page-2 {
+    height: 90vh;
+    /* background-color: white; */
+    /* color: black; */
+    padding: 0% 8%;
+    position: relative;
+    border-bottom: 2px solid rgb(156, 156, 156);
+}
+
+#page-2>h1 {
+    font-size: 8vw;
+    margin-bottom: 3%;
+    font-weight: 600;
+    color: #111;
+}
+
+#page-2>h3 {
+    /* position: absolute; */
+    width: 40%;
+    /* left: 10%; */
+    font-size: 3.5vw;
+    font-weight: 500;
+    color: #111;
+    line-height: 4vw;
+}
+
+#page-2-right {
+    position: absolute;
+    right: 5%;
+    width: 25%;
+    top: 35%;
+    font-size: 1.7vw;
+}
+
+#page-2-right>p {
+    color: #111;
+    line-height: 2vw;
+}
+
+#page-2-right>button {
+    width: 100%;
+    background-color: rgba(255, 127, 255, 0.644);
+    color: black;
+    text-align: center;
+    font-size: 1vw;
+    border-radius: 50px;
+    border: none;
+}
+
+/* PAGE 3 */
+#page-3 {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    border-bottom: 2px solid #332c2e;
+}
+
+#page-3>h1 {
+    color: #111;
+    font-size: 6vw;
+    font-weight: 500;
+    margin-left: 5vw;
+    margin-top: 5vw;
+}
+
+#page-3-part-1,
+#page-3-part-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-div>img,
+.vid-div>video {
+    height: 25vw;
+}
+
+.img-div:nth-child(1) {
+    margin-top: 10vw;
+}
+
+.img-div:nth-child(2) {
+    margin-top: 10vw;
+}
+
+#all-project {
+    margin-top: 5vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 10%;
+    align-items: center;
+    margin-bottom: 5vw;
+}
+
+#all-project>h1:hover {
+    /* border-bottom: 1px solid black; */
+    text-decoration: underline;
+    color: rgba(54, 54, 54, 0.753);
+    cursor: pointer;
+}
+
+#all-project>button {
+    padding: 5% 4%;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(255, 127, 255, 0.644);
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+#all-project>button>span {
+    color: #100D0E;
+    font-size: 0.7vw;
+    z-index: 2;
+}
+
+#all-project>button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 127, 255, 0.644);
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+#all-project>button:hover::before{
+    scale: 2;
+    opacity: 0;
+}
+
+/* PAGE 4 */
+#page-4{
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    margin-top: 10vw;
+    padding: 0% 1%;
+    z-index: 30;
+}
+.elem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 9;
+    margin-bottom: -3%;
+}
+#text-div{
+    height: 9.6vw;
+    overflow: hidden;
+    z-index: 9;
+    position: relative;
+}
+.elem h1{
+    font-size: 6.5vw;
+    overflow: hidden;
+    transition: all ease-out 0.5s;
+}
+.elem img{
+    transform: translateY(10%) rotate(2deg);
+    opacity: 0;
+    transition: all ease-out 0.5s;
+    position: absolute;
+}
+.elem img:nth-child(1){
+    left: 3%;
+    /* z-index: 0; */
+}
+.elem img:nth-child(3){
+    right: 10%;
+    /* z-index: 0; */
+}
+
+.elem:hover h1{
+    transform: translateY(-9.6vw);
+}
+.elem:hover img{
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+}
