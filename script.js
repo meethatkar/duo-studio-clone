@@ -65,8 +65,8 @@ var page2_tl = gsap.timeline({
         trigger: "#page-1>h1",
         scroller: "#main",
         // markers: true,
-        start: "top -30%",
-        end: "top -50%",
+        start: "top -130%",
+        end: "top -150%",
         scrub: 1
     }
 })
@@ -110,8 +110,8 @@ var page4_tl = gsap.timeline({
         trigger: "#page-4",
         scroller: "#main",
         // markers: true,
-        start: "top 60%",
-        end: "top 40%",
+        start: "top 50%",
+        end: "top 30%",
         scrub: 1
     }
 })
