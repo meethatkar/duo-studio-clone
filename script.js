@@ -144,11 +144,18 @@ boxes.forEach((box) => {
 var h1div = document.querySelector("#page-1>h1");
 var h2Div = document.querySelector("#page-1>h2");
 window.addEventListener("load", () => {
-    console.log(h1div, h2Div);
-    h1div.style.transform = "rotate(0deg)";
-    h2Div.style.transform = "rotate(0deg)";
-    h1div.style.opacity = 1;
-    h2Div.style.opacity = 1;
+    // console.log(h1div, h2Div);
+    setTimeout(()=>{
+        var loaderDiv = document.querySelector("#loader");
+    loaderDiv.style.display = "none";
+    loaderDiv.style.zIndex = "0";
+    },5000)
+    setTimeout(() => {
+        h1div.style.transform = "rotate(0deg)";
+        h2Div.style.transform = "rotate(0deg)";
+        h1div.style.opacity = 1;
+        h2Div.style.opacity = 1;
+    }, 5300);
 })
 
 
@@ -161,7 +168,7 @@ navH4s.forEach((h4div) => {
         purpleDivH2.forEach((h2Div) => {
             h2Div.innerText = h4div.textContent;
             // console.log(h2Div);
-            
+
         })
         purpleDiv.style.zIndex = "40";
         purpleDiv.style.opacity = "1";
