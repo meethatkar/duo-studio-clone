@@ -46,13 +46,24 @@ var page1_tl = gsap.timeline({
     }
 })
 
-page1_tl.to("#page-1>h1", {
-    left: -100,
-}, "page-1-anim")
+if (window.innerWidth > 600) {
+    page1_tl.to("#page-1>h1", {
+        left: -100,
+    }, "page-1-anim")
 
-page1_tl.to("#page-1>h2", {
-    right: -100,
-}, "page-1-anim")
+    page1_tl.to("#page-1>h2", {
+        right: -100,
+    }, "page-1-anim")
+}
+else {
+    page1_tl.to("#page-1>h1", {
+        left: -60,
+    }, "page-1-anim")
+
+    page1_tl.to("#page-1>h2", {
+        right: -60,
+    }, "page-1-anim")
+}
 
 page1_tl.to("#page-1>video", {
     width: "90%"
@@ -60,7 +71,7 @@ page1_tl.to("#page-1>video", {
 
 
 // PAGE 2 TIMELINE
-var page2_tl = gsap.timeline({
+var page2_tl_desk = gsap.timeline({
     scrollTrigger: {
         trigger: "#page-1>h1",
         scroller: "#main",
@@ -71,38 +82,59 @@ var page2_tl = gsap.timeline({
     }
 })
 
-page2_tl.to("#main", {
-    backgroundColor: "#fff",
-    duration: 1
+var page2_tl_mob = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#page-1>h1",
+        scroller: "#main",
+        markers: true,
+        start: "top -20%",
+        end: "top -50%",
+        scrub: 1
+    }
 })
+
+if (window.innerWidth > 600) {
+    page2_tl_desk.to("#main", {
+        backgroundColor: "#fff",
+        duration: 1
+    })
+}
+else {
+    page2_tl_mob.to("#main", {
+        backgroundColor: "#fff",
+        duration: 1
+    })
+}
 
 
 // CURSOR ANIMATION
 var cursorDiv = document.getElementById("cursor");
-document.addEventListener("mousemove", (dets) => {
-    cursorDiv.style.left = dets.clientX - 10 + "px";
-    cursorDiv.style.top = dets.clientY - 10 + "px";
-    // cursorDiv.style.cursor = "none";
-})
-document.querySelector("body").style.cursor = "none"
+if (window.innerWidth > 600) {
+    document.addEventListener("mousemove", (dets) => {
+        cursorDiv.style.left = dets.clientX - 10 + "px";
+        cursorDiv.style.top = dets.clientY - 10 + "px";
+        // cursorDiv.style.cursor = "none";
+    })
+    document.querySelector("body").style.cursor = "none"
 
-// CURSOR VIDEO ENTER
-var vidDiv = document.querySelector("#page-1>video");
-// IN
-vidDiv.addEventListener("mouseenter", () => {
-    cursorDiv.innerText = "SOUND ON",
-        cursorDiv.style.width = "7%",
-        cursorDiv.style.height = "3%",
-        cursorDiv.style.borderRadius = "50px"
-    cursorDiv.style.textAlign = "center"
-})
-// OUT
-vidDiv.addEventListener("mouseleave", () => {
-    cursorDiv.innerText = "",
-        cursorDiv.style.width = "20px"
-    cursorDiv.style.height = "20px"
-    cursorDiv.style.borderRadius = "50%"
-})
+    // CURSOR VIDEO ENTER
+    var vidDiv = document.querySelector("#page-1>video");
+    // IN
+    vidDiv.addEventListener("mouseenter", () => {
+        cursorDiv.innerText = "SOUND ON",
+            cursorDiv.style.width = "7%",
+            cursorDiv.style.height = "3%",
+            cursorDiv.style.borderRadius = "50px"
+        cursorDiv.style.textAlign = "center"
+    })
+    // OUT
+    vidDiv.addEventListener("mouseleave", () => {
+        cursorDiv.innerText = "",
+            cursorDiv.style.width = "20px"
+        cursorDiv.style.height = "20px"
+        cursorDiv.style.borderRadius = "50%"
+    })
+}
 
 // PAGE 4
 var page4_tl = gsap.timeline({
@@ -145,11 +177,11 @@ var h1div = document.querySelector("#page-1>h1");
 var h2Div = document.querySelector("#page-1>h2");
 window.addEventListener("load", () => {
     // console.log(h1div, h2Div);
-    setTimeout(()=>{
-        var loaderDiv = document.querySelector("#loader");
-    loaderDiv.style.display = "none";
-    loaderDiv.style.zIndex = "0";
-    },5000)
+    setTimeout(() => {
+            var loaderDiv = document.querySelector("#loader");
+        loaderDiv.style.display = "none";
+        loaderDiv.style.zIndex = "0";
+    }, 5000)
     setTimeout(() => {
         h1div.style.transform = "rotate(0deg)";
         h2Div.style.transform = "rotate(0deg)";
@@ -179,3 +211,20 @@ navH4s.forEach((h4div) => {
     })
 })
 
+if (window.innerWidth < 600) {
+    // NAV-mobile logic
+    var show_nav = false;
+    let nav_mob = document.querySelector("#nav-mob");
+    document.querySelector("nav img").addEventListener("click", () => {
+        if (show_nav) {
+            show_nav = false;
+            nav_mob.style.opacity = "0";
+            nav_mob.style.transform = "translateX(-100%)";
+        }
+        else {
+            show_nav = true;
+            nav_mob.style.opacity = "1";
+            nav_mob.style.transform = "translateX(0%)";
+        }
+    })
+}
